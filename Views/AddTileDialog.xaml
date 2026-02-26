@@ -1,0 +1,80 @@
+<ui:FluentWindow x:Class="WinTools.Views.AddTileDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Title="添加磁贴"
+        Height="220" Width="360"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ExtendsContentIntoTitleBar="True"
+        WindowBackdropType="Mica"
+        ShowInTaskbar="False">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="添加自定义磁贴" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
+        
+        <StackPanel Grid.Row="1" Margin="0,12,0,0">
+            <TextBlock Text="标题" Margin="0,0,0,8"/>
+            <ui:TextBox x:Name="TitleBox" PlaceholderText="例如: 我的常用功能"/>
+            
+            <TextBlock Text="跳转页面" Margin="0,16,0,8"/>
+            <Grid HorizontalAlignment="Left">
+                <Border x:Name="NavigateButton" 
+                        Background="{ui:ThemeResource ControlFillColorDefaultBrush}" 
+                        CornerRadius="4" Padding="12,8" Cursor="Hand" MouseLeftButtonUp="NavigateButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="NavigateButtonText" Text="无" VerticalAlignment="Center"/>
+                        <TextBlock Text=" ▼" FontSize="10" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Popup x:Name="NavigatePopup" PlacementTarget="{Binding ElementName=NavigateButton}" 
+                       Placement="Bottom" StaysOpen="False" AllowsTransparency="True" 
+                       PopupAnimation="Slide">
+                    <Border Background="{ui:ThemeResource ControlFillColorDefaultBrush}" 
+                            BorderBrush="{ui:ThemeResource ControlStrokeColorDefaultBrush}" 
+                            BorderThickness="1" CornerRadius="4" Margin="0,2,0,0">
+                        <ListBox x:Name="NavigateList" Background="Transparent" 
+                                 BorderThickness="0" Width="200"
+                                 SelectionChanged="NavigateList_SelectionChanged">
+                            <ListBoxItem Content="无" Tag="" IsSelected="True" Padding="12,8"/>
+                            <ListBoxItem Content="进程管理" Tag="ProcessView" Padding="12,8"/>
+                            <ListBoxItem Content="服务管理" Tag="ServiceView" Padding="12,8"/>
+                            <ListBoxItem Content="磁盘管理" Tag="DiskView" Padding="12,8"/>
+                            <ListBoxItem Content="网络管理" Tag="NetworkView" Padding="12,8"/>
+                            <ListBoxItem Content="应用管理" Tag="AppView" Padding="12,8"/>
+                            <ListBoxItem Content="设备管理" Tag="DeviceView" Padding="12,8"/>
+                            <ListBoxItem Content="启动项管理" Tag="StartupView" Padding="12,8"/>
+                            <ListBoxItem Content="环境变量" Tag="EnvironmentView" Padding="12,8"/>
+                            <ListBoxItem Content="电源管理" Tag="PowerView" Padding="12,8"/>
+                            <ListBoxItem Content="用户管理" Tag="UserView" Padding="12,8"/>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#3D3D3D"/>
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="#0078D4"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                        </ListBox>
+                    </Border>
+                </Popup>
+            </Grid>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+            <ui:Button Content="取消" Width="80" Margin="0,0,8,0" Click="Cancel_Click"/>
+            <ui:Button Content="添加" Appearance="Primary" Width="80" Click="Add_Click"/>
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>

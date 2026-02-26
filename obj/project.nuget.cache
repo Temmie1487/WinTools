@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "AYRCLZe4Di8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MIB12\\Documents\\tools\\WinTools-Source\\WinTools\\WinTools.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MIB12\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.10\\microsoft.net.illink.tasks.9.0.10.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\serilog\\4.0.0\\serilog.4.0.0.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.1\\system.diagnostics.eventlog.8.0.1.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\system.serviceprocess.servicecontroller\\8.0.1\\system.serviceprocess.servicecontroller.8.0.1.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\wpf-ui\\3.1.0\\wpf-ui.3.1.0.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.10\\microsoft.netcore.app.runtime.win-x64.9.0.10.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.10.nupkg.sha512",
+    "C:\\Users\\MIB12\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.10\\microsoft.aspnetcore.app.runtime.win-x64.9.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

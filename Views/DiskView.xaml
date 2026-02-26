@@ -1,0 +1,39 @@
+<Page x:Class="WinTools.Views.DiskView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="磁盘管理">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <ui:Button x:Name="RefreshBtn" Content="刷新" Click="RefreshBtn_Click"/>
+            <ui:Button x:Name="OpenDefragBtn" Content="磁盘碎片整理" Margin="8,0,0,0" Click="OpenDefragBtn_Click"/>
+            <ui:Button x:Name="OpenDiskMgrBtn" Content="磁盘管理" Margin="8,0,0,0" Click="OpenDiskMgrBtn_Click"/>
+            <ui:Button x:Name="OpenCleanupBtn" Content="磁盘清理" Margin="8,0,0,0" Click="OpenCleanupBtn_Click"/>
+            <ui:Button x:Name="OpenPropBtn" Content="属性" Margin="8,0,0,0" Click="OpenPropBtn_Click"/>
+            <ui:Button x:Name="OpenFolderBtn" Content="打开文件夹" Margin="8,0,0,0" Click="OpenFolderBtn_Click"/>
+        </StackPanel>
+        
+        <DataGrid Grid.Row="1" x:Name="DiskGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  CanUserSortColumns="True"
+                  HeadersVisibility="Column"
+                  MouseDoubleClick="DiskGrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="盘符" Binding="{Binding DriveLetter}" Width="60"/>
+                <DataGridTextColumn Header="卷标" Binding="{Binding VolumeLabel}" Width="100"/>
+                <DataGridTextColumn Header="文件系统" Binding="{Binding FileSystem}" Width="80"/>
+                <DataGridTextColumn Header="总容量 (GB)" Binding="{Binding TotalGB}" Width="100"/>
+                <DataGridTextColumn Header="可用空间 (GB)" Binding="{Binding FreeGB}" Width="120"/>
+                <DataGridTextColumn Header="已用空间 (GB)" Binding="{Binding UsedGB}" Width="120"/>
+                <DataGridTextColumn Header="使用率" Binding="{Binding UsagePercent}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

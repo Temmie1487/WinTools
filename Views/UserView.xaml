@@ -1,0 +1,34 @@
+<Page x:Class="WinTools.Views.UserView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="用户管理">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <ui:Button x:Name="RefreshBtn" Content="刷新" Click="RefreshBtn_Click"/>
+            <ui:Button x:Name="AddBtn" Content="创建用户" Margin="8,0,0,0" Click="AddBtn_Click"/>
+            <ui:Button x:Name="DeleteBtn" Content="删除用户" Margin="8,0,0,0" Click="DeleteBtn_Click"/>
+            <ui:Button x:Name="PasswordBtn" Content="修改密码" Margin="8,0,0,0" Click="PasswordBtn_Click"/>
+        </StackPanel>
+        
+        <DataGrid Grid.Row="1" x:Name="UserGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  CanUserSortColumns="True"
+                  HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="用户名" Binding="{Binding Name}" Width="180"/>
+                <DataGridTextColumn Header="全名" Binding="{Binding FullName}" Width="180"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
+                <DataGridTextColumn Header="类型" Binding="{Binding UserType}" Width="100"/>
+                <DataGridTextColumn Header="上次登录" Binding="{Binding LastLogon}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

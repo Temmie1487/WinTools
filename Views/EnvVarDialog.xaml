@@ -1,0 +1,30 @@
+<ui:FluentWindow x:Class="WinTools.Views.EnvVarDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Title="环境变量"
+        Height="250" Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ExtendsContentIntoTitleBar="True"
+        WindowBackdropType="Mica">
+    <Grid Margin="20,40,20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="变量名" Foreground="White" Margin="0,0,0,8"/>
+        <ui:TextBox Grid.Row="1" x:Name="NameBox" Margin="0,0,0,16"/>
+        
+        <TextBlock Grid.Row="2" Text="变量值" Foreground="White" Margin="0,0,0,8" VerticalAlignment="Top"/>
+        <ui:TextBox Grid.Row="2" x:Name="ValueBox" Margin="0,24,0,0" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+        
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+            <ui:Button Content="取消" Click="Cancel_Click" Margin="0,0,8,0"/>
+            <ui:Button Content="确定" Appearance="Primary" Click="OK_Click"/>
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>
