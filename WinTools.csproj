@@ -14,11 +14,12 @@
         <Version>1.0.0</Version>
         <FileVersion>1.0.0.0</FileVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <Company>MIB12</Company>
-        <Authors>MIB12</Authors>
+        <Company></Company>
+        <Authors>Temmie1487</Authors>
         <Product>WinTools - Windows系统管理工具</Product>
         <Description>专业的Windows系统管理工具</Description>
-        <Copyright>Copyright © 2024 MIB12</Copyright>
+        <Copyright>Copyright © 2026 Temmie1487</Copyright>
+        <ApplicationIcon>Assets\app.ico</ApplicationIcon>
         
         <!-- 发布配置 -->
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>

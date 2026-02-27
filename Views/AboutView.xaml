@@ -16,7 +16,7 @@
                        HorizontalAlignment="Center" Margin="0,20,0,0"/>
             
             <!-- 版本 -->
-            <TextBlock Text="版本 1.0.0" FontSize="14" Foreground="Gray" 
+            <TextBlock x:Name="VersionText" Text="版本 1.0.0" FontSize="14" Foreground="Gray" 
                        HorizontalAlignment="Center" Margin="0,8,0,0"/>
             
             <!-- 分隔线 -->
@@ -43,7 +43,7 @@
                     </Border>
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
                         <TextBlock Text="项目主页" FontSize="14" FontWeight="SemiBold"/>
-                        <TextBlock Text="GitHub 项目页面" FontSize="11" Foreground="Gray"/>
+                        <TextBlock Text="WinTools 的 GitHub 项目页面" FontSize="11" Foreground="Gray"/>
                     </StackPanel>
                     <ui:Button Grid.Column="2" Content="打开" Click="ProjectPage_Click" VerticalAlignment="Center"/>
                 </Grid>
@@ -100,7 +100,7 @@
                     </Border>
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
                         <TextBlock Text="B站主页" FontSize="14" FontWeight="SemiBold"/>
-                        <TextBlock Text="Bilibili 视频作者" FontSize="11" Foreground="Gray"/>
+                        <TextBlock Text="Temmie1487 的 B站主页" FontSize="11" Foreground="Gray"/>
                     </StackPanel>
                     <ui:Button Grid.Column="2" Content="打开" Click="Bilibili_Click" VerticalAlignment="Center"/>
                 </Grid>

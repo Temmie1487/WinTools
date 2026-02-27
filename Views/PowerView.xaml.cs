@@ -113,15 +113,17 @@ public partial class PowerView : Page
         {
             var batteryStatus = System.Windows.Forms.SystemInformation.PowerStatus;
             
-            if (batteryStatus.BatteryLifePercent >= 0 && batteryStatus.BatteryLifePercent <= 100)
+            int batteryPercent = (int)(batteryStatus.BatteryLifePercent * 100);
+            
+            if (batteryPercent >= 0 && batteryPercent <= 100)
             {
-                BatteryPercent.Text = batteryStatus.BatteryLifePercent + "%";
-                BatteryBar.Value = batteryStatus.BatteryLifePercent;
+                BatteryPercent.Text = batteryPercent + "%";
+                BatteryBar.Value = batteryPercent;
                 
                 if (batteryStatus.PowerLineStatus == System.Windows.Forms.PowerLineStatus.Online)
                 {
                     ChargingStatus.Text = "已接通电源";
-                    BatteryStatus.Text = batteryStatus.BatteryLifePercent == 100 ? "已充满" : "充电中";
+                    BatteryStatus.Text = batteryPercent == 100 ? "已充满" : "充电中";
                 }
                 else
                 {

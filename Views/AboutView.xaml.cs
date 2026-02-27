@@ -11,6 +11,7 @@ public partial class AboutView : Page
     public AboutView()
     {
         InitializeComponent();
+        VersionText.Text = "版本 " + App.CurrentVersion;
     }
 
     private void GitHub_Click(object sender, RoutedEventArgs e)
@@ -30,6 +31,25 @@ public partial class AboutView : Page
 
     private void CheckUpdate_Click(object sender, RoutedEventArgs e)
     {
-        MessageBoxWindow.Show("当前已是最新版本 (1.0.0)", "检查更新", CustomMessageBoxType.Information);
+        if (App.HasUpdate())
+        {
+            var result = MessageBoxWindow.Show(
+                $"发现新版本: {App.LatestVersion}\n当前版本: {App.CurrentVersion}\n\n是否前往下载？",
+                "发现新版本",
+                CustomMessageBoxType.Question);
+
+            if (result == CustomMessageBoxResult.OK && !string.IsNullOrEmpty(App.UpdateUrl))
+            {
+                Process.Start(new ProcessStartInfo(App.UpdateUrl) { UseShellExecute = true });
+            }
+        }
+        else if (!string.IsNullOrEmpty(App.LatestVersion))
+        {
+            MessageBoxWindow.Show($"当前已是最新版本 (v{App.CurrentVersion})", "检查更新", CustomMessageBoxType.Information);
+        }
+        else
+        {
+            MessageBoxWindow.Show("检查更新失败，请稍后重试", "检查更新", CustomMessageBoxType.Warning);
+        }
     }
 }

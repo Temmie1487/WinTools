@@ -10,9 +10,9 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MIB12")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Temmie1487")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2024 MIB12")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2026 Temmie1487")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("专业的Windows系统管理工具")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]

@@ -9,6 +9,8 @@ namespace WinTools;
 
 public partial class MainWindow : FluentWindow
 {
+    private bool _isNavigating = false;
+
     public MainWindow()
     {
         InitializeComponent();
@@ -17,6 +19,8 @@ public partial class MainWindow : FluentWindow
 
     private void NavList_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        if (_isNavigating) return;
+        
         if (NavList.SelectedItem is ListBoxItem item && item.Tag is string tag)
         {
             NavigateTo(tag);
@@ -25,6 +29,10 @@ public partial class MainWindow : FluentWindow
 
     public void NavigateTo(string tag)
     {
+        if (_isNavigating) return;
+        
+        _isNavigating = true;
+        
         Page? page = tag switch
         {
             "Dashboard" => new Views.DashboardView(),
@@ -47,6 +55,8 @@ public partial class MainWindow : FluentWindow
         {
             ContentFrame.Navigate(page);
         }
+        
+        _isNavigating = false;
     }
 
     private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
